@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>childNodes属性</title>
+	<script>
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		// 元素.childNode 只读 属性 子节点集合
+		// 标准下：包含元素和文本节点
+		// 非标准下：只包含元素节点
+		alert(oUl.childNodes.length);
+		// 9的原因是换行符被作为一个文本节点计算在内
+	}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li>11111111</li>
+		<li>22222222</li>
+		<li>33333333</li>
+		<li>44444444</li>
+	</ul>
+</body>
+</html>
