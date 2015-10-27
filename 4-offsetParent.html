@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offsetParent</title>
+		<script>
+	window.onload=function(){
+		oDiv2=document.getElementById('div2');
+		alert(oDiv2.parentNode.id);
+		//元素.offsetParent 有定位属性的父节点 
+		/*
+		如果没有定位父级，默认事body
+		IE7以下，如果当前元素没有定位，默认事body，又定位则默认是html
+		IE7以下，如果当前元素的某个父级出发了layout，那么offsetParent就会被指向到这个触发了layout特性的父节点上
+		*/
+	}
+	</script>
+</head>
+<body>
+		<div id="divwrap">
+			<div id="div1">
+				<div id="div2"></div>
+			</div>
+		</div>
+		</body>
+</html>
