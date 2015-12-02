@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9-表单的操作</title>
+	<script>
+	window.onload=function(){
+		var oForm=document.getElementById('form1');
+		// alert(oForm.text.value);
+		oForm.text.onchange=function(){
+			alert(this.value);
+		}
+	}
+	</script>
+</head>
+<body>
+	<form action="" id="form1">
+		<input type="text" name="text" value="内容">
+	</form>
+</body>
+</html>

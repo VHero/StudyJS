@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript高级程序设计示例</title>
+	<script>
+	/*
+	作用域问题，JS中没有块级作用域
+	var color='blue';
+	function getColor(){
+		var color='red';
+		return color;
+	}
+	alert(getColor());
+	*/
+	/*
+	Array类型
+	*/
+	var colors=new Array();//新建数组的第一种方式
+	var colors=['red','green','yellow'];//新建数组的第二种方式，数组字面量
+	colors[colors.length]='black'//利用length向数组的末尾添加新项
+	var colorsString=colors.toString();//toString方法
+	// console.log(colors.join('||'));使用join方法以||为分隔符  red||green||yellow||black
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

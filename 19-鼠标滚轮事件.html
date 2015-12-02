@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滚轮事件</title>
+    <style>
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var oDiv1 = document.getElementById('div1');
+        /*
+        	ie/chrome：onmousewheel
+        	ff:DOMMouseScroll 必须用addEventListener绑定
+        */
+        oDiv1.onmousewheel = fn;
+        if (oDiv1.addEventListener) {
+            oDiv1.addEventListener('DOMMouseScroll', fn, false);
+        }
+        function fn(ev) {
+        	var ev=ev||event;
+        	var b=true;
+        	if(ev.wheelDelta){
+        		b=ev.wheelDelta>0?true:false;
+        	}
+        	if(ev.detail){
+        		b=ev.detail<0?true:false;
+        	}
+        	if(b){
+        		this.style.height=this.offsetHeight-10+'px';
+        	}else{
+
+        		this.style.height=this.offsetHeight+10+'px';
+        	}
+        	if(ev.preventDefault){
+        		ev.preventDefault();
+        	}
+        	return false;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

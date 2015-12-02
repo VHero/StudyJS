@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>10-焦点事件</title>
+    <script>
+    // 焦点：为了能够区分用户输入的对象，当一个元素有焦点的时候，那么他就可以接受用户的输入。
+    window.onload = function() {
+        var oInput = document.getElementById('text1');
+        oInput.onfocus = function() {
+        	if(this.value=="请输入内容"){
+        		this.value="";
+        	}
+
+        }
+        oInput.onblur=function(){
+        	if(this.value==""){
+        		this.value='请输入内容';
+        	}
+        }
+        oInput.focus();
+        oInput.blur();
+
+    }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text1" value="请输入内容">
+</body>
+
+</html>

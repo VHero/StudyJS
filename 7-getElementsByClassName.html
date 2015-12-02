@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getElementsByClassName</title>
+	<script>
+	window.onload=function(){
+		var oUl1=document.getElementById('ul1');
+		var aLi=getElementsByClassName(oUl1,'box');
+		alert(aLi.length);
+		console.log(aLi);
+		function getElementsByClassName(parent,className){
+			var aEl=parent.getElementsByTagName('*');
+			var arr=[];
+			for(var i=0;i<aEl.length;i++){
+				// if(aEl[i].className==className){
+				// 	arr.push(aEl[i]);
+				// }
+				var aClassName=aEl[i].className.split(' ');
+				for(var j=0;j<aClassName.length;j++){
+					if(aClassName[j]==className){
+						arr.push(aEl[i]);
+						break;
+					}
+				}
+			}
+			return arr;
+		}
+	}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li class="box">1</li>
+		<li class="box1 box">34</li>
+		<li class="">22222</li>
+		<li>555555</li>
+	</ul>	
+	<ul id="ul2">
+		<li class="box">1</li>
+		<li class="box1 box">34</li>
+		<li class="">22222</li>
+		<li>555555</li>
+	</ul>
+</body>
+</html>

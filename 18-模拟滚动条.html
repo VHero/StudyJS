@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>模拟滚动条</title>
+    <style>
+    #div1 {
+        width: 30px;
+        height: 500px;
+        background: #000;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    
+    #div2 {
+        width: 30px;
+        height: 30px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #div3{
+    	width: 498px;
+    	border: 1px solid green;
+    	height: 500px;
+    	position: absolute;
+    	left: 50px;
+    	top: 10px;
+    }
+    #div4{
+    	position: absolute;
+    	left: 0;
+    	top: 0
+    }
+    </style>
+    }
+    <script>
+    window.onload = function() {
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3=document.getElementById('div3');
+        var oDiv4=document.getElementById('div4');
+
+        var iMaxTop=oDiv1.offsetHeight-oDiv2.offsetHeight;
+        oDiv2.onmousedown=function(ev){
+        	var ev=ev||event;
+        	var disY=ev.clientY-this.offsetTop;
+        	document.onmousemove=function(ev){
+        		var ev=ev||event;
+        		var T=ev.clientY-disY;
+        		if(T<0){
+        		T=0;
+        			
+        		}else if(T>iMaxTop){
+        			T=iMaxTop;
+        		}
+        		oDiv2.style.top=T+'px';
+        		var iScale=T/iMaxTop
+        		document.title=iScale;
+        		oDiv4.style.top=(oDiv3.clientHeight-oDiv4.offsetHeight)*iScale+'px';
+        	}
+        	document.onmouseup=function(){
+        		document.onmousedown=document.onmousemove=null;
+        	}
+        	return false;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <div id="div3">
+    	<div id="div4">
+    		Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。	Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。	Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。	Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。Firefox 无法找到在 i.firefoxchina.cn 的服务器。
+
+    请检查该地址是否输入错误，比如将"www.example.com"错写成"ww.example.com"
+    如果您无法载入任何页面，请检查您计算机的网络连接。
+    如果您的计算机或网络受到防火墙或者代理服务器的保护，请确认 Firefox 已被授权访问网络。
+
+    	</div>
+    </div>
+</body>
+
+</html>

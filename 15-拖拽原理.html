@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>15-拖拽</title>
+    <style>
+    body{
+    	height: 2000px;
+    }
+    #div1 {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background: red;
+        top: 0;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+        oDiv.onmousedown = function(ev) {
+            var ev = ev || event;
+            var disX = ev.clientX - this.offsetLeft;
+            var disY = ev.clientY - this.offsetTop;
+            if(oDiv.setCapture){//如果存在全局捕获设置全局捕获
+            	oDiv.setCapture();
+            }
+            document.onmousemove = function(ev) {
+                var ev = ev || event;
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                oDiv.style.left = ev.clientX - disX + 'px';
+                oDiv.style.top = scrollTop+ev.clientY - disY + 'px';
+            }
+            document.onmouseup = function() {
+            	document.onmousemove=document.onmouseup=null;
+            	oDiv.releaseCapture();//释放全局捕获
+            }
+            return false;
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"> </div>
+	<p>1111111111</p>
+</body>
+
+</html>
